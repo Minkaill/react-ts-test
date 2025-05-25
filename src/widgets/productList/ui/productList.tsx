@@ -1,9 +1,7 @@
-// src/widgets/ProductList/ui/ProductList.tsx
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { Product as BaseProduct } from '@entities/Product/model/types';
-import { ProductCard } from '@entities/Product';
-import { ConfigurableProductCard } from '../../../features/ConfigurableProduct';
+import { ProductCard, Product as BaseProduct } from '@entities/Product';
+import { ConfigurableProductCard } from '@features/ConfigurableProduct';
 
 interface ProductListProps {
   products: Array<BaseProduct & any>;

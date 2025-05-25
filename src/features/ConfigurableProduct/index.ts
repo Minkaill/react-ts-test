@@ -1,2 +1,2 @@
-export * from './ui/ConfigurableProductCard';
-export * from './ui/OptionSelector';
+export { ConfigurableProductCard } from './ui/ConfigurableProductCard';
+export { OptionSelector } from './ui/OptionSelector';

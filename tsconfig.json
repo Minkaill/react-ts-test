@@ -25,6 +25,7 @@
       "@context/*": ["context/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
+      "@features/*": ["features/*"],
       "@widgets/*": ["widgets/*"],
       "@data/*": ["data/*"],
       "@shared/*": ["shared/*"],

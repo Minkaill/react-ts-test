@@ -25,6 +25,7 @@ module.exports = {
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@widgets': path.resolve(__dirname, 'src/widgets/'),
       '@data': path.resolve(__dirname, 'src/data/'),
+      '@features': path.resolve(__dirname, 'src/features/'),
       '@shared': path.resolve(__dirname, 'src/shared/'),
       '@app': path.resolve(__dirname, 'src/app/'),
     },

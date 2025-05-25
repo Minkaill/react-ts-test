@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  fetchProducts,
-  selectFilteredProducts,
-} from '../../../entities/Product/model/productSlice';
-import { AppDispatch, RootState } from '../../../app/store';
+
 import { BrandFilter } from '@widgets/brandFilter';
 import { ProductList } from '@widgets/productList';
+import { AppDispatch, RootState } from '@app/store';
+import { fetchProducts, selectFilteredProducts } from '@entities/Product';
 
 export const CatalogLayout: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
