@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // build last version of JS (to have async/await, spread...)
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Define which JS APIs are available (eg: window, fetch)
+    "allowJs": false, // prevents using classic .js files in the project
+    "skipLibCheck": true, // skip errors of d.ts in node_modules to guarantee performances
+    "esModuleInterop": true, // allows CommonJS modules to be imported with import x from 'x' instead of import * as x
+    "allowSyntheticDefaultImports": true, // same as esModuleInterop but for transpiler behavior only
+    "strict": true, // strict check of TS to maximise security
+    "strictNullChecks": true, // prevent from using too much null/undefined (less errors at runtime)
+    "forceConsistentCasingInFileNames": true, // avoid bug cas between Window and Linux
+    "noFallthroughCasesInSwitch": true, // warns when a case in a switch forgets a break
+    "noImplicitReturns": true, // force all branch of a function to return a value
+    "module": "ESNext", // use native ECMAScript modules (import/export)
+    "moduleResolution": "Node", // search modules like Node (Standard for React/Webpack)
+    "resolveJsonModule": true, // allow import myFile from "./data.json"
+    "isolatedModules": true, //each file is compatible alone (compatible with Webpack and babel-loader and fast)
+    "incremental": true, // store metadata / accelerate rebuild
+    "baseUrl": "src",
+    "paths": {
+      // scabalitlity
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@assets/*": ["assets/*"],
+      "@context/*": ["context/*"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"],
+      "@widgets/*": ["widgets/*"],
+      "@data/*": ["data/*"],
+      "@shared/*": ["shared/*"],
+      "@entities/*": ["entities/*"],
+      "@app/*": ["app/*"]
+    },
+    "jsx": "react-jsx" // no need to import React in each file since React 18
+  },
+  "include": ["src"]
+}
