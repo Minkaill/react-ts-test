@@ -4,13 +4,27 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "start": "npm run dev",
+        "dev": "cross-env NODE_ENV=development webpack serve --mode development --open",
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "build:dev": "cross-env NODE_ENV=development webpack --mode development",
+        "build:analyze": "cross-env NODE_ENV=production ANALYZE_BUNDLE=true webpack --mode production",
+        "preview": "npm run build && serve -s dist -l 8080",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack serve --mode development --open",
-        "build": "webpack --mode production",
-        "lint": "eslint 'src/**/*.{ts,tsx}'",
-        "format": "prettier --write 'src/**/*.{ts,tsx,scss}'"
+        "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
+        "lint:check": "eslint 'src/**/*.{ts,tsx}'",
+        "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
+        "format:check": "prettier --check 'src/**/*.{ts,tsx,scss}'",
+        "type-check": "tsc --noEmit",
+        "validate": "npm run type-check && npm run lint:check && npm run format:check"
     },
-    "keywords": [],
+    "keywords": [
+        "react",
+        "typescript",
+        "webpack",
+        "boilerplate",
+        "environment-config"
+    ],
     "author": "",
     "license": "ISC",
     "type": "commonjs",
@@ -28,7 +42,9 @@
         "@types/react": "^19.1.2",
         "@types/react-dom": "^19.1.2",
         "clean-webpack-plugin": "^4.0.0",
+        "cross-env": "^7.0.3",
         "css-loader": "^6.7.3",
+        "dotenv": "^16.4.5",
         "eslint": "^9.25.1",
         "eslint-config-prettier": "^10.1.2",
         "eslint-plugin-import": "^2.31.0",
@@ -39,6 +55,7 @@
         "prettier": "^3.5.3",
         "sass": "^1.69.5",
         "sass-loader": "^13.3.2",
+        "serve": "^14.2.4",
         "style-loader": "^3.3.2",
         "stylelint": "^16.19.1",
         "stylelint-config-standard-scss": "^14.0.0",
@@ -51,5 +68,21 @@
     },
     "compilerOptions": {
         "jsx": "react-jsx"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }
